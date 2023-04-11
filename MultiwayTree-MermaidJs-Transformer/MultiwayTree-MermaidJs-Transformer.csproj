@@ -2,9 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <RootNamespace>MultiwayTree_MermaidJs_Transformer</RootNamespace>
+    <RootNamespace>MultiwayTreeMermaidJsTransformer</RootNamespace>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
   </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="MultiwayTree" Version="1.0.0" />
+  </ItemGroup>
 
 </Project>
