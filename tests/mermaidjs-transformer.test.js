@@ -36,15 +36,13 @@ test('test two', () => {
       ]
     }
   ];
-  expect(transformer.transformChartToTrees("---\
-  title: My awesome chart\
-  \
-  ---\
-  flowchart LR\
-      A[Entity Type] --> |Firm| Relevant\
-      A --> |Product/Strategy| C[Investment Focus]\
-      C --> |Long Only| Relevant\
-      C --> |Two| Relevant\
-      Relevant\
-    ")).toBe(expectedTrees);
+
+  let chartDef = `flowchart LR
+  A[Entity Type] --> |Firm| Relevant
+  A --> |Product/Strategy| C[Investment Focus]
+  C --> |Long Only| Relevant
+  C --> |Two| Relevant
+  Relevant`;
+
+  expect(transformer.transformChartToTrees(chartDef)).toEqual(expectedTrees);
 });
