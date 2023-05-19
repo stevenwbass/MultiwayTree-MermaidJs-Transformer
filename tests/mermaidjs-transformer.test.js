@@ -37,7 +37,11 @@ test('test two', () => {
     }
   ];
 
-  let chartDef = `flowchart LR
+  let chartDef = `---
+title: My awesome chart
+---
+
+flowchart LR
   A[Entity Type] --> |Firm| Relevant
   A --> |Product/Strategy| C[Investment Focus]
   C --> |Long Only| Relevant
