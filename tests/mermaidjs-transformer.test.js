@@ -7,6 +7,8 @@ test('Empty chart def should return null', () => {
 test('test two', () => {
   let expectedTrees = [
     {
+      Identifier: 'A',
+      NextNodeIdentifier : undefined,
       Data: {
           Attribute: "Entity Type",
           Value: "Firm"
@@ -14,12 +16,16 @@ test('test two', () => {
       Children: []
     },
     {
+      Identifier: 'A',
+      NextNodeIdentifier: 'C',
       Data: {
         Attribute: "Entity Type",
         Value: "Product/Strategy"
       },
       Children: [
         {
+          Identifier: 'C',
+          NextNodeIdentifier : undefined,
           Data: {
             Attribute: "Investment Focus",
             Value: "Long Only"
@@ -27,6 +33,8 @@ test('test two', () => {
           Children: []
         },
         {
+          Identifier: 'C',
+          NextNodeIdentifier : undefined,
           Data: {
             Attribute: "Investment Focus",
             Value: "Two"
@@ -48,5 +56,7 @@ flowchart LR
   C --> |Two| Relevant
   Relevant`;
 
-  expect(transformer.transformChartToTrees(chartDef)).toEqual(expectedTrees);
+  debugger;
+  let actualTrees = transformer.transformChartToTrees(chartDef);
+  expect(actualTrees).toEqual(expectedTrees);
 });
